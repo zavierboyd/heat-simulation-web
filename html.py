@@ -13,23 +13,7 @@ startpage = """
 </body>
 </html>
 """
-makinghouse = """
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/edit.css">
-    <script type="text/javascript" src="/js/draw.js"></script>
-    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-</head>
-<body onload="house()">
-    {edit}
-    <table id="tab" cellspacing="0"></table>
-    <form action="/edit" method="post">
-        <input type="hidden" name="data" value="" id="data">
-        <input type="submit" id="submit" value="Save House">
-    </form>
-</body>
-</html>
-"""
+
 housemade = """
 <html>
 <head>
@@ -40,7 +24,7 @@ housemade = """
 <body onload="makehouse()">
     <table id="tab" cellspacing="0"></table>
     <form action="/edit" method="post">
-        <input type="hidden" name="data" value="{house}" id="data">
+        <input type="hidden" name="floorplan" value="{house}" id="floorplan">
         <input type="submit" id="submit" value="Save House">
     </form>
     <input type="button" onclick="toggle()" value"Toggle draw">
@@ -60,14 +44,25 @@ dataentry = """
     <div>
         <a href="/">Back to main page</a>
     </div>
-    <form action="/dataentry" method="post">
-        <table id="name">
-        <table id="conductance"></table>
+    <form action="/dataentry" method="post" id="house">
+        <!--<p>Room Names</p>-->
+        <!--<table id="name"></table>-->
+        <!--<p>Initial Temperatures</p>-->
+        <!--<table id="temps"></table>-->
+        <!--<p>U-Values of the Walls</p>-->
+        <!--<table id="conductance"></table>-->
+        <!--<p>Width of the Walls</p>-->
         <table id="area"></table>
-        <table id="temps"></table>
-        <table id="capacity"></table>
+        <!--<p>Room names</p>-->
+        <!--<table id="capacity"></table>-->
+        <!--<p>Room names</p>-->
+        <input type="hidden" id="tarea" name="tarea">
         <input type="submit">
     </form>
+    <input type="hidden" id="pyarea" name="pyarea" value="{pyarea}">
+    <div id="click">
+    bob
+    </div>
 </body>
 </html>
 """
